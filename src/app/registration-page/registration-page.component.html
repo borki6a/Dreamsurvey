@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Регистрация</h1>
+                      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                        <!-- Username input -->
+                        <div class="row mb-4">
+                            <div class="form-outline mb-4">
+                               <label class="label">Потребителско име</label>
+                               <input formControlName="username" type="text" placeholder="Потребителско име" class="form-control"/>
+                               <span class="text-danger" *ngIf="signupForm.controls['username'].dirty && 
+                               signupForm.hasError('required','username')"> *Моля, въведете потребителско име!</span>
+                            </div>
+                          </div>
+                      
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                           <label class="label">Имейл</label>
+                           <input formControlName="email" type="email" placeholder="Имейл" class="form-control"/>
+                           <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && 
+                            signupForm.hasError('required','email')"> *Моля, въведете вашият имейл!</span>
+                        </div>
+                      
+                        <!-- Password input -->
+                        <div class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline">
+                                 <label class="label">Парола</label>
+                                 <input formControlName="password" type="password" placeholder="Парола" class="form-control"/>
+                                 <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && 
+                                  signupForm.hasError('required','password')"> *Моля, въведете парола</span>
+                              </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary btn-block mb-4">Регистрация</button>
+
+                        <div class="logLink" routerLink="/login"><a>Вече си регистриран? Кликни тук!</a></div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

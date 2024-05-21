@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Вход</h1>
+                    <form [formGroup]="loginForm">
+                        <!-- Username input -->
+                        <div class="row mb-4">
+                            <div class="form-outline" >
+                               <label class="label">Потребителско име</label>
+                               <input formControlName="username" type="text" class="form-control" placeholder="Потребителско име"/>
+                               <span class="text-danger" *ngIf="loginForm.controls['username'].dirty && 
+                               loginForm.hasError('required','username')"> *Моля, въведете потребителско име!</span>
+                            </div>
+                        </div>
+                      
+                        <!-- Password input -->
+                        <div class="row mb-4">    
+                        <div class="col">
+                              <div class="form-outline">
+                                 <label class="label">Парола</label>
+                                 <input formControlName="password" type="password" class="form-control" placeholder="Парола"/>
+                                 <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && 
+                                 loginForm.hasError('required','password')"> *Моля, въведете парола!</span>
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit button -->
+                        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary btn-block mb-4" routerLink="/home">Влез</button>
+
+                        <div class="regLink" routerLink="/registration"><a>Нямаш регистрация? Кликни тук!</a></div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

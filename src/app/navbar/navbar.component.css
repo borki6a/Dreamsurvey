@@ -1,0 +1,23 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.logo {
+    height: 45px;
+    width: 45px;
+}
+
+.mat-primary {
+    background: #16385e;
+    color: #fff;
+  }
+
+  .mat-accent {
+    background: #83128d;
+    color: #fff;
+  }
+
+  .navbar-item {
+    text-align: center;
+    color: #fff;
+  }
